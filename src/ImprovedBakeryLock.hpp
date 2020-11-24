@@ -32,7 +32,7 @@ public:
     void unlock() noexcept
     {
         /// Allow next thread to acquire a lock
-        _current.fetch_add(1, std::memory_order_relaxed);
+        _current.fetch_add(1, std::memory_order_release);
     }
 
     /**
